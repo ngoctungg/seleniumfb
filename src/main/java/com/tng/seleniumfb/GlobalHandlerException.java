@@ -19,7 +19,7 @@ public class GlobalHandlerException{
     @ExceptionHandler(Exception.class)
     public void handleException(Exception e){
         log.error(e);
-        String url = "https://api.telegram.org/bot5305732763:AAEyzdIXAM4-70EWALtdhUhj3DZDMu4uzjU/sendMessage?chat_id=@tngerror&text={msg}";
+        String url = "https://api.telegram.org";
         String exchange = restTemplate.getForObject(url, String.class, "Error: " + e.getMessage());
         log.info(exchange);
     }
